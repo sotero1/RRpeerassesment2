@@ -1,9 +1,14 @@
 ---
-title: 'Peer Assesment2: Natural Dissasters'
+title: 'Peer Assesment2: U.S. Natural Dissasters 1950-2010'
 author: "Sotero"
 date: "Saturday, November 15, 2014"
 output: html_document
 ---
+
+#Sypnosys
+
+Extreme weather events are a big problem in the U.S. In this article we will examine which event is the most deadly to Americans and the most costly. We have data from NOAA storm database. Our data consists of most natural disaster that have occurred in the U.S. from 1950-2010.    We first look at which natural disaster has caused the most fatalities and the most injuries. Second, we look at which natural disaster has been the most costly. 
+
 
 # Data Processing
 
@@ -91,9 +96,7 @@ injuries
 
 Plots
 
-```{r,cache=TRUE}
-
-library("ggplot2", lib.loc="~/R/win-library/3.1")
+```{r}
 
 
 
@@ -173,7 +176,7 @@ max(damagesdf$PROPDMG)
 properties.
 
 
-```{r,cache=TRUE}
+```{r}
 
 # here we find the total number of properties damaged each year by tornados
 
@@ -187,13 +190,15 @@ damprop$BGN_DATE <- as.character(damprop$BGN_DATE )
 damprop$BGN_DATE <-as.numeric(damprop$BGN_DATE )
 
 
-#plot(damprop$BGN_DATE,damprop$PROPDMG  )
+plot(damprop$BGN_DATE,damprop$PROPDMG,type="l",xlab="Year",ylab = "Property Damage", main= "Tornado"  )
 
 #with(data=damprop,plot(BGN_DATE,PROPDMG ) )
 
 
 
 ```
+# Results
 
+Our data shows that tornados are the most deadly, harmful and costly natural disaster in the United States.  Tornados have caused a total of 5633 fatalities and 91346 injuries on the time period from 1950-2010.  In addition to the total damages by tornadoes is 3212258. No other natural disaster has caused as many fatalities, injuries, and damages.
 
 
