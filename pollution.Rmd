@@ -31,9 +31,6 @@ In this part we find the total number of fatalities for each type of disaster.
 
 ```{r,cache=TRUE}
 
-str(data)
-
-head(data)
 
 
 fatal  <- tapply(data$FATALITIES , data$EVTYPE , sum, na.rm= T)
@@ -125,7 +122,7 @@ toryeardf$BGN_DATE <- as.character(toryeardf$BGN_DATE )
 toryeardf$BGN_DATE <-as.numeric(toryeardf$BGN_DATE )
 
 
-#plot(toryeardf$BGN_DATE , toryeardf$FATALITIES,xlab="Year",ylab="Fatalities",type="l",main=  "Tornados")
+plot(toryeardf$BGN_DATE , toryeardf$FATALITIES,xlab="Year",ylab="Fatalities",type="l",main=  "Tornados")
 
 #dev.copy(png,file="tornadofatal.png")
 
@@ -192,15 +189,12 @@ damprop$BGN_DATE <-as.numeric(damprop$BGN_DATE )
 
 plot(damprop$BGN_DATE,damprop$PROPDMG,type="l",xlab="Year",ylab = "Property Damage", main= "Tornado"  )
 
-#with(data=damprop,plot(BGN_DATE,PROPDMG ) )
 
-#add this code to upload
-# options(rpubs.upload.method = "internal")
 
 ```
 # Results
 
-Our data shows that tornados are the most deadly, harmful and costly natural disaster in the United States.  Tornados have caused a total of 5633 fatalities and 91346 injuries on the time period from 1950-2010.  In addition to the total damages by tornadoes is 3212258. No other natural disaster has caused as many fatalities, injuries, and damages.
+Our data shows that tornados are the most deadly, harmful and costly natural disaster in the United States.  Tornados have caused a total of 5633 fatalities and 91346 injuries on the time period from 1950-2010.  In addition to the total damages by tornadoes is 3212258. No other natural disaster has caused as many fatalities, injuries, and damages. The graph shows that fatalities due to tornarnadoes have not increased with the exception of 2010. Howver, damages due to tornadoes have increased over the years. This is show on the second figure.
 
 
 
