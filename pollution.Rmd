@@ -194,11 +194,13 @@ plot(damprop$BGN_DATE,damprop$PROPDMG,type="l",xlab="Year",ylab = "Property Dama
 
 #with(data=damprop,plot(BGN_DATE,PROPDMG ) )
 
-
+#add this code to upload
+# options(rpubs.upload.method = "internal")
 
 ```
 # Results
 
 Our data shows that tornados are the most deadly, harmful and costly natural disaster in the United States.  Tornados have caused a total of 5633 fatalities and 91346 injuries on the time period from 1950-2010.  In addition to the total damages by tornadoes is 3212258. No other natural disaster has caused as many fatalities, injuries, and damages.
+
 
 
