@@ -22,6 +22,9 @@ download.file("http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.c
 data <-read.csv("data.csv", header= T )
 
 
+head(data)
+
+str(data)
 
 
 ```
@@ -192,6 +195,31 @@ plot(damprop$BGN_DATE,damprop$PROPDMG,type="l",xlab="Year",ylab = "Property Dama
 
 
 ```
+
+
+```{r,cache=TRUE}
+
+data$PROPDMGEXP <- as.numeric(as.character(data$PROPDMGEXP))
+
+
+
+# mydata$multiple <- 1
+# mydata$multiple[mydata$PROPDMGEXP =="K"] <- 1000
+# mydata$multiple[mydata$PROPDMGEXP =="M"] <- 1000000
+
+data$PROPDMGEXP[data$PROPDMGEXP=="K"]  <- 1000
+data$PROPDMGEXP[data$PROPDMGEXP=="M"] <- 1000000
+data$PROPDMGEXP[data$PROPDMGEXP=="B"] <- 1000000000
+
+data$damages <- data$PROPDMGEXP*data$PROPDMGEXP
+
+
+
+
+
+```
+
+
 # Results
 
 Our data shows that tornados are the most deadly, harmful and costly natural disaster in the United States.  Tornados have caused a total of 5633 fatalities and 91346 injuries on the time period from 1950-2010.  In addition to the total damages by tornadoes is 3212258. No other natural disaster has caused as many fatalities, injuries, and damages. The graph shows that fatalities due to tornarnadoes have not increased with the exception of 2010. Howver, damages due to tornadoes have increased over the years. This is show on the second figure.
